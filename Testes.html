@@ -1,0 +1,48 @@
+﻿<html>
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.8.0/jasmine.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.8.0/jasmine.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.8.0/jasmine-html.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.8.0/boot.min.js"></script>
+    <script src="Calculator.js"></script>
+</head>
+<body>
+<script>
+
+    it('Add', function () {
+        expect(Calculate("25+5+7")).toEqual(eval("25+5+7"));
+        expect(Calculate("315+62+84+95")).toEqual(eval("315+62+84+95"));
+    });
+
+    it('Subtract', function () {
+        expect(Calculate("25-55-76")).toEqual(eval("25-55-76"));
+        expect(Calculate("53-65-8-9")).toEqual(eval("53-65-8-9"));
+    });
+
+    it('Multiply', function () {
+        expect(Calculate("27*5*7")).toEqual(eval("27*5*7"));
+        expect(Calculate("36*6*88*9")).toEqual(eval("36*6*88*9"));
+    });
+
+    it('Divide', function () {
+        expect(Calculate("42/58/7")).toEqual(eval("42/58/7"));
+        expect(Calculate("37/6/88/9")).toEqual(eval("37/6/88/9"));
+    });
+
+    it('Parentheses', function () {
+        expect(Calculate("(8+3)-5+2")).toEqual(eval("(8+3)-5+2"));
+        expect(Calculate("5+16-((9-6)-(4-2))")).toEqual(eval("5+16-((9-6)-(4-2))"));
+    });
+
+    it('Precedence', function () {
+        expect(Calculate("4/2+(5+1/2)-5+1*8")).toEqual(eval("4/2+(5+1/2)-5+1*8"));
+    });
+
+    it('Decimal', function () {
+        expect(Calculate("1.5*2")).toEqual(eval("1.5*2"));
+        expect(Calculate("51.5*2.3")).toEqual(eval("51.5*2.3"));
+    });
+
+</script>
+</body>
+</html>
