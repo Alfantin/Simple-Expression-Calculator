@@ -30,7 +30,8 @@
         }
 
         else {
-            throw "unexpected character '" + char + "'";
+            // throw "unexpected character '" + char + "'"; instead of throwing error you should alert user that input is invalid
+            alert('Invalid');
         }
 
         return value;
